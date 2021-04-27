@@ -1,0 +1,37 @@
+
+
+- hosts: fe1
+  tasks:
+    - name: "Git Clone Wayshub Frontend"
+      git:
+        repo: git@github.com:dhanifajar15/wayshub-frontend.git
+        version: main
+        dest: /home/frontend1/wayshub-frontend/
+        accept_hostkey: yes
+
+- hosts: fe2
+  tasks:
+    - name: "Git Clone Wayshub Frontend"
+      git:
+        repo: git@github.com:dhanifajar15/wayshub-frontend.git
+        version: main
+        dest: /home/frontend2/wayshub-frontend/
+        accept_hostkey: yes
+
+- hosts: be1
+  tasks:
+    - name: "Git Clone Wayshub Backend"
+      git:
+        repo: git@github.com:dhanifajar15/wayshub-backend.git
+        version: main
+        dest: /home/backend1/wayshub-backend/
+        accept_hostkey: yes
+
+- hosts: be2
+  tasks:
+    - name: "Git Clone Wayshub Backend"
+      git:
+        repo: git@github.com:dhanifajar15/wayshub-backend.git
+        version: main
+        dest: /home/backend2/wayshub-backend/
+        accept_hostkey: yes

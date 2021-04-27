@@ -1,0 +1,20 @@
+- hosts: fe1
+  tasks:
+    - name: Deploy wayshub-frontend 1
+      command: chdir=/home/frontend1/wayshub-frontend/ docker-compose up -d
+
+- hosts: fe2
+  tasks:
+    - name: Deploy wayshub-frontend 2
+      command: chdir=/home/frontend2/wayshub-frontend/ docker-compose up -d
+
+- hosts: be1
+  tasks:
+    - name: Deploy wayshub-backend
+      command: chdir=/home/backend1/wayshub-backend/ docker-compose up -d
+
+
+- hosts: be2
+  tasks:
+    - name: Deploy wayshub-backend
+      command: chdir=/home/backend2/wayshub-backend/ docker-compose up -d
