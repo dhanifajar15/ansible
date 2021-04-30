@@ -1,25 +1,21 @@
-
 #[default_user]
 
-#fe1      ansible_host=10.0.100.170  ansible_user=ubuntu
-#fe2      ansible_host=10.0.100.171  ansible_user=ubuntu
-#be1      ansible_host=10.0.100.208  ansible_user=ubuntu
-#be2      ansible_host=10.0.100.88   ansible_user=ubuntu
-#db       ansible_host=10.0.100.233  ansible_user=ubuntu
-#jenkins  ansible_host=10.0.100.158  ansible_user=ubuntu
-#monitor  ansible_host=10.0.100.142  ansible_user=ubuntu
-
-
-
+#fe1      ansible_host=10.0.100.84  ansible_user=ubuntu
+#fe2      ansible_host=10.0.100.48  ansible_user=ubuntu
+#be1      ansible_host=10.0.100.41  ansible_user=ubuntu
+#be2      ansible_host=10.0.100.175  ansible_user=ubuntu
+#db       ansible_host=10.0.100.45  ansible_user=ubuntu
+#jenkins  ansible_host=10.0.100.59  ansible_user=ubuntu
+#monitor  ansible_host=10.0.100.195  ansible_user=ubuntu
 
 [new_user]
-fe1      ansible_host=10.0.100.170  ansible_user=frontend1
-fe2      ansible_host=10.0.100.171  ansible_user=frontend2
-be1      ansible_host=10.0.100.208  ansible_user=backend1
-be2      ansible_host=10.0.100.88   ansible_user=backend2
-db       ansible_host=10.0.100.233  ansible_user=database
-jenkins  ansible_host=10.0.100.158  ansible_user=jenkins
-monitor  ansible_host=10.0.100.142  ansible_user=monitoring
+fe1      ansible_host=10.0.100.84  ansible_user=frontend1
+fe2      ansible_host=10.0.100.48  ansible_user=frontend2
+be1      ansible_host=10.0.100.41  ansible_user=backend1
+be2      ansible_host=10.0.100.175   ansible_user=backend2
+db       ansible_host=10.0.100.45  ansible_user=database1
+jenkins  ansible_host=10.0.100.59  ansible_user=jenkins
+monitor  ansible_host=10.0.100.195  ansible_user=monitoring
 
 [new_user:vars]
 ansible_python_interpreter=/usr/bin/python3

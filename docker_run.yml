@@ -1,13 +1,13 @@
-- hosts: jenkins
-  tasks:
-    - name: "docker run jenkins"
-      command: docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/usr/app dhanifajar15/jenkins
+#- hosts: jenkins
+ # tasks:
+  #  - name: "docker run jenkins"
+   #   command: docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/usr/app dhanifajar15/jenkins
 
 
-- hosts: monitor
-  tasks:
-    - name: "docker run prometheus"
-      command: docker run -p 9090:9090 -d  dhanifajar15/prometheus
+#- hosts: monitor
+ # tasks:
+  #  - name: "docker run prometheus"
+   #   command: docker run -p 9090:9090 -d  dhanifajar15/prometheus
 
 - hosts: all
   tasks:
@@ -22,4 +22,4 @@
 - hosts: db
   tasks:
     - name: Deploy database
-      command: chdir=/home/database/mysql-master-slave/ sudo ./build.sh
+      command: docker run --name some-postgres -e POSTGRES_PASSWORD=wayshub -d postgres

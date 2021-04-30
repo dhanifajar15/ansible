@@ -1,0 +1,9 @@
+- hosts: fe1:fe2
+  tasks:
+    - name: "build docker frontend"
+      command: chdir=/home/{{ansible_user}}/waysgallery-frontend/ docker build -t dhanifajar15/waysgallery-frontend .
+      
+- hosts: be1:be2
+  tasks:
+    - name: "build docker backend"
+      command: chdir=/home/{{ansible_user}}/waysgallery-backend/ docker build -t dhanifajar15/waysgallery-backend .

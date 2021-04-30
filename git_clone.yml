@@ -1,37 +1,70 @@
 
 
+
 - hosts: fe1
   tasks:
+    - name: "Creates directory"
+      file:
+        path: /home/frontend1/waysgallery-frontend/
+        state: directory
+        owner: frontend1
+        group: frontend1
+        mode: 0775
+    
     - name: "Git Clone Wayshub Frontend"
       git:
-        repo: git@github.com:dhanifajar15/wayshub-frontend.git
+        repo: git@github.com:dhanifajar15/waysgallery-frontend.git
         version: main
-        dest: /home/frontend1/wayshub-frontend/
+        dest: /home/frontend1/waysgallery-frontend/
         accept_hostkey: yes
 
-- hosts: fe2
+- hosts: fe2 
   tasks:
+    - name: "Creates directory"
+      file:
+        path: /home/frontend2/waysgallery-frontend/
+        state: directory
+        owner: frontend2
+        group: frontend2
+        mode: 0775
+        
     - name: "Git Clone Wayshub Frontend"
       git:
-        repo: git@github.com:dhanifajar15/wayshub-frontend.git
+        repo: git@github.com:dhanifajar15/waysgallery-frontend.git
         version: main
-        dest: /home/frontend2/wayshub-frontend/
+        dest: /home/frontend2/waysgallery-frontend/
         accept_hostkey: yes
 
 - hosts: be1
   tasks:
+    - name: "Creates directory"
+      file:
+        path: /home/backend1/waysgallery-backend/
+        state: directory
+        owner: backend1
+        group: backend1
+        mode: 0775
+        
     - name: "Git Clone Wayshub Backend"
       git:
-        repo: git@github.com:dhanifajar15/wayshub-backend.git
+        repo: git@github.com:dhanifajar15/waysgallery-backend.git
         version: main
-        dest: /home/backend1/wayshub-backend/
+        dest: /home/backend1/waysgallery-backend/
         accept_hostkey: yes
 
 - hosts: be2
   tasks:
+    - name: "Creates directory"
+      file:
+        path: /home/backend2/waysgallery-backend/
+        state: directory
+        owner: backend2
+        group: backend2
+        mode: 0775
+        
     - name: "Git Clone Wayshub Backend"
       git:
-        repo: git@github.com:dhanifajar15/wayshub-backend.git
+        repo: git@github.com:dhanifajar15/waysgallery-backend.git
         version: main
-        dest: /home/backend2/wayshub-backend/
+        dest: /home/backend2/waysgallery-backend/
         accept_hostkey: yes
